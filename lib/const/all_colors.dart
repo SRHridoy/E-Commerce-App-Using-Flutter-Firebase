@@ -6,4 +6,5 @@ class AllColors{
   static final whiteColor = Color(0xffffffff);
   static final blackColor = Color(0xff000000);
   static final starColor = Color(0xffFCBF0C);
+  static final transparentColor= Colors.transparent;
 }
