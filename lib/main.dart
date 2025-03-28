@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/add_to_cart_screen.dart';
 import 'package:e_commerce_app/screens/login_screen.dart';
 import 'package:e_commerce_app/screens/register_screen.dart';
 import 'package:e_commerce_app/screens/splash_screen.dart';
@@ -18,7 +19,7 @@ class ECommerceApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: RegisterScreen(),
+      home: AddToCartScreen(),
     );
   }
 }

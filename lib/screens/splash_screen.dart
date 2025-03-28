@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AllColors.primaryColor,
       body: Center(
-        child: Text("PW E-commerce",style: AllStyles.headingTextStyle.copyWith(color: AllColors.whiteColor),),
+        child: Text("SR E-commerce",style: AllStyles.headingTextStyle.copyWith(color: AllColors.whiteColor),),
       ),
     );
   }

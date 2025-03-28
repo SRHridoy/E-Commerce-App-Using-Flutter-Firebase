@@ -22,8 +22,8 @@ class LoginScreen extends StatelessWidget {
           children: [
             Gap(40),
             CircleAvatar(
-              backgroundColor: AllColors.secondaryColor,
-              child: Icon(Icons.arrow_back),
+              backgroundColor: AllColors.arrowColor,
+              child: Icon(Icons.arrow_back,color: AllColors.blackColor,),
             ),
             Gap(30),
             SizedBox(
@@ -38,11 +38,11 @@ class LoginScreen extends StatelessWidget {
                   Gap(20),
                   Text(
                     'Welcome back you’ve',
-                    style: AllStyles.titleTextStyle,
+                    style: AllStyles.titleTextStyle.copyWith(fontWeight: FontWeight.w600),
                   ),
                   Text(
                     'been missed!',
-                    style: AllStyles.titleTextStyle,
+                    style: AllStyles.titleTextStyle.copyWith(fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
@@ -67,13 +67,13 @@ class LoginScreen extends StatelessWidget {
                   Gap(40),
                   CustomButton(
                     title: 'Sign In',
-                    size: AllSizes.medium,
-                    height: 50,
+                    size: AllSizes.large,
+                    height: 58,
                     width: MediaQuery.of(context).size.width,
                     onTap: () {},
                   ),
                   Gap(40),
-                  Text('Create a new account',style: AllStyles.subtitleTextStyle,)
+                  Text('Create a new account',style: AllStyles.subtitleTextStyle.copyWith(color: AllColors.lightColor),)
                 ],
               ),
             ),

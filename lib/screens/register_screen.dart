@@ -23,8 +23,8 @@ class RegisterScreen extends StatelessWidget {
           children: [
             Gap(40),
             CircleAvatar(
-              backgroundColor: AllColors.secondaryColor,
-              child: Icon(Icons.arrow_back),
+              backgroundColor: AllColors.arrowColor,
+              child: Icon(Icons.arrow_back,color: AllColors.blackColor,),
             ),
             Gap(30),
             SizedBox(
@@ -38,14 +38,14 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   Gap(20),
                   Text(
-                    'Create an account so you can explore all the',
+                    'Create an account so you can explore all the',textAlign: TextAlign.center,
                     style: AllStyles.subtitleTextStyle
-                        .copyWith(color: AllColors.primaryColor,fontSize: 11),
+                        .copyWith(fontSize: 11),
                   ),
                   Text(
-                    'existing jobs',
+                    'existing jobs',textAlign: TextAlign.center,
                     style: AllStyles.subtitleTextStyle
-                        .copyWith(color: AllColors.primaryColor,fontSize: 11),
+                        .copyWith(fontSize: 11),
                   ),
                 ],
               ),
@@ -63,15 +63,15 @@ class RegisterScreen extends StatelessWidget {
                   Gap(40),
                   CustomButton(
                     title: 'Sign Up',
-                    size: AllSizes.medium,
-                    height: 50,
+                    size: AllSizes.large,
+                    height: 58,
                     width: MediaQuery.of(context).size.width,
                     onTap: () {},
                   ),
                   Gap(40),
                   Text(
                     'Already have a account?',
-                    style: AllStyles.subtitleTextStyle,
+                    style: AllStyles.subtitleTextStyle.copyWith(color: AllColors.lightColor),
                   )
                 ],
               ),
