@@ -104,18 +104,34 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        _selected==0? selectedNumber('0'):unSelectedNumber('0'),
-                        _selected==1? selectedNumber('1'):unSelectedNumber('1'),
-                        _selected==2? selectedNumber('2'):unSelectedNumber('2'),
-                        _selected==3? selectedNumber('3'):unSelectedNumber('3'),
-                        _selected==4? selectedNumber('4'):unSelectedNumber('4'),
-                        _selected==5? selectedNumber('5'):unSelectedNumber('5'),
+                        _selected == 0
+                            ? selectedNumber('0')
+                            : unSelectedNumber('0'),
+                        _selected == 1
+                            ? selectedNumber('1')
+                            : unSelectedNumber('1'),
+                        _selected == 2
+                            ? selectedNumber('2')
+                            : unSelectedNumber('2'),
+                        _selected == 3
+                            ? selectedNumber('3')
+                            : unSelectedNumber('3'),
+                        _selected == 4
+                            ? selectedNumber('4')
+                            : unSelectedNumber('4'),
+                        _selected == 5
+                            ? selectedNumber('5')
+                            : unSelectedNumber('5'),
                       ],
                     ),
                     Gap(30),
-                    CustomButton(title: 'Add to cart', size: AllSizes.large, height: 58, width: size.width, onTap: () {
-
-                    },)
+                    CustomButton(
+                      title: 'Add to cart',
+                      size: AllSizes.medium,
+                      height: 48,
+                      width: size.width,
+                      onTap: () {},
+                    )
                   ],
                 ),
               )
@@ -127,21 +143,30 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
   }
 
   Widget unSelectedNumber(String number) {
-    return CustomBoxForItemNumber(number: number, color: AllColors.transparentColor, borderColor: AllColors.lightColor.withAlpha(70), textColor: AllColors.blackColor,
-    onTap: () {
-      setState(() {
-        _selected = int.parse(number);
-      });
-    },
+    return CustomBoxForItemNumber(
+      number: number,
+      color: AllColors.transparentColor,
+      borderColor: AllColors.lightColor.withAlpha(70),
+      textColor: AllColors.blackColor,
+      onTap: () {
+        setState(() {
+          _selected = int.parse(number);
+        });
+      },
     );
   }
 
   Widget selectedNumber(String number) {
-    return CustomBoxForItemNumber(number: number, color: AllColors.primaryColor, borderColor: AllColors.transparentColor, textColor: AllColors.whiteColor,onTap: () {
-      setState(() {
-        _selected = int.parse(number);
-      });
-    });
+    return CustomBoxForItemNumber(
+        number: number,
+        color: AllColors.primaryColor,
+        borderColor: AllColors.transparentColor,
+        textColor: AllColors.whiteColor,
+        onTap: () {
+          setState(() {
+            _selected = int.parse(number);
+          });
+        });
   }
 
   Widget ratingBuilder(int rating) {
