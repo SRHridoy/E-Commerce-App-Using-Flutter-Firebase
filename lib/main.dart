@@ -1,4 +1,6 @@
 import 'package:e_commerce_app/screens/add_to_cart_screen.dart';
+import 'package:e_commerce_app/screens/bottom_nav_bar.dart';
+import 'package:e_commerce_app/screens/home_screen.dart';
 import 'package:e_commerce_app/screens/login_screen.dart';
 import 'package:e_commerce_app/screens/my_cart_screen.dart';
 import 'package:e_commerce_app/screens/register_screen.dart';
@@ -6,6 +8,8 @@ import 'package:e_commerce_app/screens/splash_screen.dart';
 import 'package:e_commerce_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'screens/setup_screen.dart';
 
 void main(){
   runApp(ECommerceApp());
@@ -21,7 +25,7 @@ class ECommerceApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: MyCartScreen(),
+      home: HomeScreen(),
     );
   }
 }
