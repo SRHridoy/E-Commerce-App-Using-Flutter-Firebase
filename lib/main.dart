@@ -31,7 +31,7 @@ class ECommerceApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: RegisterScreen(),
+      home: SplashScreen(),
       routes: {
         '/home': (context) => HomeScreen(),
         '/splash': (context) => SplashScreen(),

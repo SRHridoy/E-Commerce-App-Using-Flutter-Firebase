@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
     import 'package:e_commerce_app/const/all_styles.dart';
+import 'package:e_commerce_app/const/local_data.dart';
+import 'package:e_commerce_app/controllers/auth_controller.dart';
+import 'package:e_commerce_app/screens/setup_screen.dart';
     import 'package:flutter/material.dart';
     import 'package:gap/gap.dart';
     import 'package:get/get.dart';
@@ -8,16 +11,59 @@ import 'package:carousel_slider/carousel_slider.dart';
     import '../const/all_colors.dart';
 
     class HomeScreen extends StatelessWidget {
-      const HomeScreen({super.key});
+      final AuthController authController = Get.put(AuthController());
+      HomeScreen({super.key});
 
       @override
       Widget build(BuildContext context) {
         return Scaffold(
+          appBar: AppBar(
+            leading: Builder(
+              builder: (context) => IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              ),
+            ),
+          ),
+          drawer: Drawer(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: AllColors.primaryColor,
+                  ),
+                  child: Text(
+                    'Menu',
+                    style: TextStyle(
+                      color: AllColors.whiteColor,
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text('Profile Setup'),
+                  onTap: () {
+                    Get.to(() => SetupScreen(), transition: Transition.rightToLeft);
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.info),
+                  title: Text('About'),
+                  onTap: () {
+                    // Navigate to the About screen or show an about dialog
+                  },
+                ),
+              ],
+            ),
+          ),
           body: CustomScrollView(
             slivers: [
               SliverPadding(
                 padding: EdgeInsets.only(
-                  top: 70,
                   left: 12,
                   right: 12,
                 ),
@@ -26,10 +72,12 @@ import 'package:carousel_slider/carousel_slider.dart';
                     [
                       Row(
                         children: [
-                          Text(
-                            'Hello Nahiyan',
-                            style: AllStyles.titleTextStyle,
-                          ),
+                          Obx(() {
+                            return Text(
+                              'Hello ${authController.localData.readUID()}',
+                              style: AllStyles.titleTextStyle,
+                            );
+                          }),
                           Gap(5),
                           Image.asset(
                             'assets/images/hand_hello.png',
